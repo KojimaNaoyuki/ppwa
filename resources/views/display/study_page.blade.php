@@ -48,7 +48,10 @@
         画像は目的の物がなるべく中央に来ているものを使用してください。<br>
         プレビューに移っている形で学習されます。多少画像が崩れていても問題ありません。
     </p>
+  </div>
 
+  <div class="msg_area">
+    <h3>{{$msg}}</h3>
   </div>
 
   <form method="post" action="/base/up_file" enctype="multipart/form-data" class="send_file_box">
@@ -57,6 +60,7 @@
     <p>EROOR : {{$message}}</p>
     @enderror
     {{ csrf_field() }}
+    <input type="hidden" name="thread_id_num" value="{{$thread_id_send}}">
     <input type="file" name="photo" id="img_id">
     <input type="submit">
   </form>
@@ -77,8 +81,8 @@
       ///////////////////////////////////////////
       var obj = document.images['tg_img']
 
-      obj.height = 200;
-      obj.width = 200;
+      obj.height = 300;
+      obj.width = 300;
       ///////////////////////////////////////////
 
       event.preventDefault();     // デフォルトイベントのキャンセル
@@ -122,14 +126,6 @@
         }
       },false);
 
-    }
-
-    //////////////////////////////////////////////////////////////////////////////////////
-
-    function picture_on()
-    {
-      console.log("picture_on");
-      location.href = "http://localhost:8000/base/studypage?thread_id=" + "{{$thread_id_send}}";
     }
   </script>
 @endsection

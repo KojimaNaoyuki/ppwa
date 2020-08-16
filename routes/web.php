@@ -24,3 +24,5 @@ Route::get('base/study_page_picture_on','BaseController@study_page_picture_on');
 Route::get('db_studypage/studypage','db_studypageController@update_number'); //学習ページ
 Route::post('db_studypage/post_thread','db_studypageController@post_thread'); //学習ページ
 Route::post('base/up_file','BaseController@up_file'); //学習ページ
+
+Route::get('base/judgpage','BaseController@judg_page'); //判定ページ

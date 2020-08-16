@@ -20,7 +20,7 @@ class db_studypageController extends Controller
     // print($request -> thread_id);
     //print("<p>select_number = " . $select_number -> number . "</p>");
 
-    return redirect('/base/studypage?thread_id=' . $request -> thread_id);
+    return redirect('/base/studypage?thread_id=' . $request -> thread_id . '&uploaed=1');
   }
 
   public function post_thread(Request $request)

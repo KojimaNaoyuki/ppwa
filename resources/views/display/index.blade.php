@@ -18,7 +18,7 @@
 @section('sc')
   <script type="text/javascript">
     document.getElementById('judg_btn').onclick = function() {
-      location.href = "url";
+      location.href = "base/judgpage";
     }
     document.getElementById('study_btn').onclick = function() {
       location.href = "base/studypage?thread_id=1";
