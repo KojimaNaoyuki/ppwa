@@ -34,8 +34,8 @@ class BaseController extends Controller
     {
       //ファイルをアップロード
 
-      $request -> photo -> store('public/photo_images/origin/thread_' . $request -> thread_id_num); //これでstorage/app/public/photo_images/originの中に保存される
-      $request -> photo -> store('public/photo_images/origin_del/thread_' . $request -> thread_id_num); //これでstorage/app/public/photo_images/originの中に保存される
+      $request -> photo -> store('public/photo_images/origin/thread_' . $request -> thread_id_num); //これでstorage/app/public/photo_images/origin/の中に保存される
+      $request -> photo -> store('public/photo_images/origin_del/thread_' . $request -> thread_id_num); //これでstorage/app/public/photo_images/origin_delの中に保存される
 
       //exec()を使う時laravelではppwa/publicがパスのディフォルトになっている
       $command = "python resize.py"; //絶対パスを指定する
@@ -57,6 +57,22 @@ class BaseController extends Controller
     public function judg_page(Request $request)
     {
       //判定ページ
-      return view('display.judg_page');
+      $name = "aaa";
+
+      return view('display.judg_page',['thread_name' => $name]);
+    }
+
+    public function judg_file(BaseRequest $request)
+    {
+      //判定ファイルをアップロード
+      $request -> photo -> store('public/judg/origin');
+
+      $ai_result = 1; //ここにはパイソンファイルからの答えを受けとったのを代入
+
+      $items = DB::table('picture') -> where('id',$ai_result) -> first();
+
+      $name = $items -> thread;
+
+      return view('display.judg_page',['thread_name' => $name]);
     }
 }

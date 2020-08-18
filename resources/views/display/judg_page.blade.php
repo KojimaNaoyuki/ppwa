@@ -8,7 +8,7 @@
 
 @section('origin')
   <h2>判定させたい画像をアップロード</h2>
-  <form method="post" action="/base/up_file" enctype="multipart/form-data" class="send_file_box">
+  <form method="post" action="judg_file" enctype="multipart/form-data" class="send_file_box">
     <h3>ファイルをアップロード</h3>
     @error('photo')
     <p>EROOR : {{$message}}</p>
@@ -24,6 +24,9 @@
 
 @section('judg')
   <h2>判定結果</h2>
+  <div class="msg_area">
+    <p>{{$thread_name}}</p>
+  </div>
 @endsection
 
 @section('sc')
@@ -34,8 +37,8 @@
     ///////////////////////////////////////////
     var obj = document.images['tg_img']
 
-    obj.height = 200;
-    obj.width = 200;
+    obj.height = 300;
+    obj.width = 300;
     ///////////////////////////////////////////
 
     event.preventDefault();     // デフォルトイベントのキャンセル

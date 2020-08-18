@@ -26,3 +26,4 @@ Route::post('db_studypage/post_thread','db_studypageController@post_thread'); //
 Route::post('base/up_file','BaseController@up_file'); //学習ページ
 
 Route::get('base/judgpage','BaseController@judg_page'); //判定ページ
+Route::post('base/judg_file','BaseController@judg_file'); //判定ページ

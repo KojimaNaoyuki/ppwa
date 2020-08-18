@@ -28,7 +28,7 @@
       }
 
       .wf-mplus1p { font-family: "M PLUS 1p"; }
-      
+
       /* ///////////////////////////////////////////////////////////// */
 
       .text_in {
@@ -73,6 +73,19 @@
         background-color: #f0f8ff;
         text-align: center;
       }
+
+      /* ///////////////////////////////////////////////////////////// */
+
+      .msg_area {
+        width: 60%;
+        margin-left: 20%;
+        margin-right: 20%;
+        background-color: #ff7f50;
+        text-align: center;
+
+        border-radius: 15px;
+      }
+
     </style>
   </head>
   <body>

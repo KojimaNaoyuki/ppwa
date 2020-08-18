@@ -18,7 +18,7 @@
 @section('sc')
   <script type="text/javascript">
     document.getElementById('judg_btn').onclick = function() {
-      location.href = "base/judgpage";
+      location.href = "base/judgpage?ai_result=0";
     }
     document.getElementById('study_btn').onclick = function() {
       location.href = "base/studypage?thread_id=1";
