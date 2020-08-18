@@ -67,6 +67,9 @@ class BaseController extends Controller
       //判定ファイルをアップロード
       $request -> photo -> store('public/judg/origin');
 
+      // $command = "python predict.py";
+      // exec($command, $ai_result, $return_var)
+      // print($return_var);
       $ai_result = 1; //ここにはパイソンファイルからの答えを受けとったのを代入
 
       $items = DB::table('picture') -> where('id',$ai_result) -> first();
